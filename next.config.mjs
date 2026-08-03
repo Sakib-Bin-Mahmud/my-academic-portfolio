@@ -1,12 +1,12 @@
-const isProd = process.env.NODE_ENV === "production";
+const isGithubPages = process.env.GITHUB_PAGES === "true";
 const basePath = "/my-academic-portfolio";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
   output: "export",
-  basePath: isProd ? basePath : "",
-  assetPrefix: isProd ? basePath : "",
+  basePath: isGithubPages ? basePath : "",
+  assetPrefix: isGithubPages ? basePath : "",
   images: { unoptimized: true },
 };
 
