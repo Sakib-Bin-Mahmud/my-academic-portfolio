@@ -170,6 +170,8 @@ export const projects: Project[] = [
       'Details kept high-level here by design \u2014 this work involves employer systems.',
     ],
     tags: ['FastAPI', 'PostgreSQL', 'Backend Systems'],
+    link: 'https://techoptions.com.bd/',
+    linkLabel: 'TechOptions',
   },
 ];
 
