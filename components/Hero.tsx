@@ -5,7 +5,7 @@ import { profile } from '@/lib/data';
 export default function Hero() {
   return (
     <section id="top" className="relative overflow-hidden pt-32 pb-24 md:pt-40 md:pb-32">
-      <div className="pointer-events-none absolute inset-0 bg-grid bg-gridpattern opacity-40 [mask-image:radial-gradient(ellipse_60%_60%_at_50%_0%,#000_20%,transparent_75%)]" />
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-grid bg-gridpattern opacity-40 [mask-image:radial-gradient(ellipse_60%_60%_at_50%_0%,#000_20%,transparent_75%)]" />
 
       <div className="relative mx-auto grid max-w-6xl grid-cols-1 items-center gap-16 px-6 md:grid-cols-5">
         <div className="md:col-span-3">
@@ -40,6 +40,14 @@ export default function Hero() {
               View Research
             </a>
             <a
+              href="/cv.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-sm border border-line px-5 py-2.5 font-mono text-xs font-medium uppercase tracking-widest text-ink transition-colors hover:border-detect hover:text-detect"
+            >
+              Download CV
+            </a>
+            <a
               href="#contact"
               className="font-mono text-xs uppercase tracking-widest text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-detect"
             >
@@ -58,7 +66,7 @@ export default function Hero() {
 
 function DetectionVisual() {
   return (
-    <div className="relative mx-auto aspect-square max-w-sm rounded-md border border-line bg-panel p-6">
+    <div aria-hidden="true" className="relative mx-auto aspect-square max-w-sm rounded-md border border-line bg-panel p-6">
       <div className="absolute left-3 top-3 font-mono text-[10px] uppercase tracking-widest text-muted">
         frame_0421.mp4
       </div>

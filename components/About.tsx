@@ -5,6 +5,7 @@ export default function About() {
     <section id="about" className="border-t border-line/60 py-20">
       <div className="mx-auto grid max-w-6xl grid-cols-1 gap-12 px-6 md:grid-cols-5">
         <div className="md:col-span-1">
+          <h2 className="sr-only">About</h2>
           <p className="font-mono text-xs uppercase tracking-[0.2em] text-detect">[ 00 &mdash; About ]</p>
         </div>
         <div className="md:col-span-3">

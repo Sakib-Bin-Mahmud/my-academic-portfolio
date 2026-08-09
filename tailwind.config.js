@@ -10,7 +10,7 @@ module.exports = {
         base: '#0F1626',
         panel: '#161F33',
         panel2: '#1C2740',
-        line: '#2A3654',
+        line: '#5D6C93',
         ink: '#F1EDE4',
         muted: '#8B93A7',
         detect: '#5EEAD4',

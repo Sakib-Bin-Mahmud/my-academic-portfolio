@@ -2,6 +2,7 @@ import { profile } from '@/lib/data';
 
 const socials = [
   { label: 'Email', href: `mailto:${profile.email}`, value: profile.email },
+  { label: 'Download CV', href: '/cv.pdf', value: 'PDF, updated regularly' },
   { label: 'GitHub', href: profile.links.github, value: 'Sakib-Bin-Mahmud' },
   { label: 'LinkedIn', href: profile.links.linkedin, value: 'sakib-bin-mahmud' },
   { label: 'Google Scholar', href: profile.links.scholar, value: 'View profile' },
