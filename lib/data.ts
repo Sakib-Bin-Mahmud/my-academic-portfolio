@@ -265,6 +265,24 @@ export const awards = [
   { title: '1st Runner-Up, Innovation Showcasing, SynergyX', org: 'Khulna', period: 'Dec 2024' },
 ];
 
+export type ArchComparison = {
+  model: string;
+  testAcc: number;
+  modelSizeMb: number;
+  isProposed?: boolean;
+};
+
+// Source: Table I / II, IEEE COMPAS 2025 paper (DOI 10.1109/COMPAS67506.2025.11381726)
+export const architectureComparison: ArchComparison[] = [
+  { model: 'Proposed Model (YOLOv8n + MobileNetV2)', testAcc: 99.56, modelSizeMb: 17.55, isProposed: true },
+  { model: 'VGG16', testAcc: 92.27, modelSizeMb: 56.5 },
+  { model: 'EfficientNetV2B0', testAcc: 89.70, modelSizeMb: 34.02 },
+  { model: 'Xception', testAcc: 89.13, modelSizeMb: 135.57 },
+  { model: 'ResNet50', testAcc: 87.96, modelSizeMb: 160 },
+  { model: 'Custom CNN', testAcc: 81.58, modelSizeMb: 2.13 },
+  { model: 'MobileNetV2 (baseline)', testAcc: 79.75, modelSizeMb: 15.5 },
+];
+
 export const education = {
   degree: 'B.Sc. in Computer Science and Engineering',
   org: 'Khulna University',

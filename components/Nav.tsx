@@ -26,14 +26,24 @@ export default function Nav() {
             </li>
           ))}
         </ul>
-        <a
-          href={profile.links.scholar}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="font-mono text-xs uppercase tracking-widest text-detect hover:underline"
-        >
-          Scholar &rarr;
-        </a>
+        <div className="flex items-center gap-6">
+          <a
+            href="/cv.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden font-mono text-xs uppercase tracking-widest text-ink hover:text-detect sm:inline"
+          >
+            Download CV
+          </a>
+          <a
+            href={profile.links.scholar}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-mono text-xs uppercase tracking-widest text-detect hover:underline"
+          >
+            Scholar &rarr;
+          </a>
+        </div>
       </nav>
     </header>
   );
