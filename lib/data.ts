@@ -125,10 +125,11 @@ export const projects: Project[] = [
     category: 'Research \u2014 Multimodal AI',
     summary: 'A multilingual, voice-enabled LLM reasoning benchmark for sustainable aquaponics decision-making.',
     details: [
-      'Co-authored a 22-scenario benchmark spanning normal, stress, failure, and recovery conditions.',
-      'Contributed to a four-dimension evaluation protocol: risk identification, action correctness, reasoning quality, decision quality.',
-      'Helped design multilingual (English + Bangla) and voice-transcribed query evaluation.',
-      'Findings: GPT held 91\u201392% cross-lingual stability; Gemini and Grok degraded under Bangla / voice conditions.',
+      'Co-designed a knowledge-grounded, scenario-driven benchmark spanning 22 aquaponics scenario batches \u2014 normal operation, water-quality stress, biofilter/system failure, plant stress, night-time emergencies, sensor uncertainty, and post-intervention recovery \u2014 grounded in FAO guidelines and peer-reviewed aquaponics literature rather than arbitrary synthetic data.',
+      'Helped build a structured reasoning and evaluation protocol that scores model outputs against expert-labelled ground truth on four dimensions: risk identification accuracy, action correctness, reasoning quality, and overall decision quality.',
+      'Paired each scenario with natural-language farmer queries in English and Bangla \u2014 the Bangla queries simulate speech-to-text output, with informal phrasing and incomplete sentence structure \u2014 to evaluate GPT, Gemini, and Grok as an LLM-as-a-judge pipeline.',
+      'GPT held the smallest English-to-Bangla drop in overall decision quality (92.05% \u2192 91.67%); Gemini and Grok degraded more sharply (85.00% \u2192 82.58% and 80.08% \u2192 77.78%), with the gap widening most under emergency scenarios like night-time oxygen crashes and ammonia spikes.',
+      'These reasoning and safety weaknesses only surfaced once evaluation moved beyond English-only, idealised text prompts \u2014 the core motivation for the multilingual, scenario-driven benchmark design.',
     ],
     tags: ['LLM Evaluation', 'Multilingual NLP', 'Applied AI'],
   },
@@ -281,6 +282,25 @@ export const architectureComparison: ArchComparison[] = [
   { model: 'ResNet50', testAcc: 87.96, modelSizeMb: 160 },
   { model: 'Custom CNN', testAcc: 81.58, modelSizeMb: 2.13 },
   { model: 'MobileNetV2 (baseline)', testAcc: 79.75, modelSizeMb: 15.5 },
+];
+
+export type ModelLangComparison = {
+  model: string;
+  language: 'English' | 'Bangla';
+  riskAcc: number;
+  action: number;
+  reasoning: number;
+  overall: number;
+};
+
+// Source: Table 1.5, NeuroPonic — ICSASD 2026 (LLM-as-a-judge evaluation, English vs. Bangla)
+export const neuroponicModelComparison: ModelLangComparison[] = [
+  { model: 'GPT', language: 'English', riskAcc: 88.86, action: 93.64, reasoning: 93.64, overall: 92.05 },
+  { model: 'GPT', language: 'Bangla', riskAcc: 93.85, action: 91.54, reasoning: 93.85, overall: 91.67 },
+  { model: 'Gemini', language: 'English', riskAcc: 82.95, action: 83.86, reasoning: 88.18, overall: 85.00 },
+  { model: 'Gemini', language: 'Bangla', riskAcc: 86.36, action: 83.33, reasoning: 78.03, overall: 82.58 },
+  { model: 'Grok', language: 'English', riskAcc: 77.27, action: 82.05, reasoning: 80.91, overall: 80.08 },
+  { model: 'Grok', language: 'Bangla', riskAcc: 85.61, action: 77.27, reasoning: 81.06, overall: 77.78 },
 ];
 
 export const education = {

@@ -5,6 +5,7 @@ import { projects } from '@/lib/data';
 import Nav from '@/components/Nav';
 import Contact from '@/components/Contact';
 import ArchitectureChart from '@/components/ArchitectureChart';
+import ModelComparisonChart from '@/components/ModelComparisonChart';
 
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
@@ -71,6 +72,12 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
         {project.slug === 'bdsl-translation' && (
           <div className="mt-10">
             <ArchitectureChart />
+          </div>
+        )}
+
+        {project.slug === 'neuroponic' && (
+          <div className="mt-10">
+            <ModelComparisonChart />
           </div>
         )}
 
