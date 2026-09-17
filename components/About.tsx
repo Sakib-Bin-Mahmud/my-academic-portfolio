@@ -13,7 +13,7 @@ export default function About() {
               alt={profile.name}
               fill
               sizes="200px"
-              className="object-cover object-top grayscale contrast-125"
+              className="object-cover object-top"
             />
           </div>
           <h2 className="sr-only">About</h2>
