@@ -24,6 +24,7 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://my-academic-portfolio-theta.vercel.app'),
   title: 'Sakib Mahmud Sovon \u2014 Computer Vision & Multimodal AI',
   description:
     'Portfolio of Sakib Mahmud Sovon: computer vision, multimodal AI, and accessibility technology research, including real-time Bengali Sign Language translation and multilingual LLM reasoning.',
