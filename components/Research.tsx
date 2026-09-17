@@ -1,9 +1,16 @@
+import Link from 'next/link';
 import { highlights, publications } from '@/lib/data';
+import ArchitectureChart from './ArchitectureChart';
+import CopyBibtex from './CopyBibtex';
 
 export default function Research() {
   return (
-    <section id="research" className="border-t border-line/60 py-20">
-      <div className="mx-auto max-w-6xl px-6">
+    <section id="research" className="relative overflow-hidden border-t border-line/60 py-20">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-grid bg-gridpattern opacity-[0.12] [mask-image:linear-gradient(to_bottom,transparent,#000_15%,#000_85%,transparent)]"
+      />
+      <div className="relative mx-auto max-w-6xl px-6">
         <p className="mb-2 font-mono text-xs uppercase tracking-[0.2em] text-detect">[ 01 &mdash; Research ]</p>
         <h2 className="mb-12 font-display text-3xl font-medium text-ink">Selected Contributions</h2>
 
@@ -17,10 +24,23 @@ export default function Research() {
           ))}
         </div>
 
+        <div className="mb-20">
+          <h3 className="mb-6 font-display text-xl font-medium text-ink">
+            How the proposed model compares
+          </h3>
+          <ArchitectureChart />
+          <Link
+            href="/projects/bdsl-translation"
+            className="mt-4 inline-block font-mono text-xs uppercase tracking-widest text-detect hover:underline"
+          >
+            Full project details &rarr;
+          </Link>
+        </div>
+
         <h3 className="mb-8 font-display text-xl font-medium text-ink">Publications</h3>
         <div className="flex flex-col gap-6">
           {publications.map((p) => (
-            <div key={p.title} className="group border-b border-line/60 pb-6 last:border-0">
+            <div key={p.citeKey} className="group border-b border-line/60 pb-6 last:border-0">
               <p className="font-mono text-xs uppercase tracking-widest text-muted">{p.year}</p>
               <h4 className="mt-2 font-display text-lg text-ink">{p.title}</h4>
               <p className="mt-1 font-body text-sm text-muted">{p.authors}</p>
@@ -46,6 +66,7 @@ export default function Research() {
                     {p.linkLabel} &rarr;
                   </a>
                 )}
+                <CopyBibtex publication={p} />
               </div>
             </div>
           ))}

@@ -55,6 +55,7 @@ export const highlights = [
 ];
 
 export type Publication = {
+  citeKey: string;
   authors: string;
   title: string;
   venue: string;
@@ -67,6 +68,7 @@ export type Publication = {
 
 export const publications: Publication[] = [
   {
+    citeKey: 'mistry2025bdsl',
     authors: 'S. P. Mistry, S. M. Sovon, M. Gain, and R. Debnath',
     title: 'A Lightweighted CNN-Based Framework for Real-Time Bengali Sign Language Recognition and Translation',
     venue: 'IEEE 2nd International Conference on Computing, Applications and Systems (COMPAS 2025), Kushtia, Bangladesh',
@@ -77,12 +79,14 @@ export const publications: Publication[] = [
     linkLabel: 'IEEE Xplore',
   },
   {
+    citeKey: 'shihab2026neuroponic',
     authors: 'H. R. Shihab, S. M. Sovon, and M. M. Hossain',
     title: 'NeuroPonic: Exploring Multilingual, Voice-Enabled LLM Reasoning for Intelligent and Sustainable Aquaponics',
     venue: '1st International Conference on Smart Agriculture for Sustainable Development (ICSASD 2026)',
     year: '2026',
   },
   {
+    citeKey: 'sovon2024bdsl',
     authors: 'S. M. Sovon and S. P. Mistry',
     title: 'Text Generation from Bengali Sign Language (BdSL) Image using Convolutional Neural Networks',
     venue: 'IEEE Computer Society Bangladesh Chapter (BDC) Symposium 2024, Jagannath University, Bangladesh',

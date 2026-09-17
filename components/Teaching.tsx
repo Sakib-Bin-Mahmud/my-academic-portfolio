@@ -2,8 +2,12 @@ import { teaching } from '@/lib/data';
 
 export default function Teaching() {
   return (
-    <section id="teaching" className="border-t border-line/60 py-20">
-      <div className="mx-auto max-w-6xl px-6">
+    <section id="teaching" className="relative overflow-hidden border-t border-line/60 py-20">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-grid bg-gridpattern opacity-[0.12] [mask-image:linear-gradient(to_bottom,transparent,#000_15%,#000_85%,transparent)]"
+      />
+      <div className="relative mx-auto max-w-6xl px-6">
         <p className="mb-2 font-mono text-xs uppercase tracking-[0.2em] text-detect">[ 03 &mdash; Teaching ]</p>
         <h2 className="mb-12 font-display text-3xl font-medium text-ink">Teaching & Mentoring</h2>
 
