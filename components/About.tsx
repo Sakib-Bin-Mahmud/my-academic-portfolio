@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { profile, education } from '@/lib/data';
 
 export default function About() {
@@ -6,16 +5,6 @@ export default function About() {
     <section id="about" className="border-t border-line/60 py-20">
       <div className="mx-auto grid max-w-6xl grid-cols-1 gap-12 px-6 md:grid-cols-5">
         <div className="md:col-span-1">
-            <div className="bracket-frame relative mb-6 aspect-[4/5] w-full max-w-[200px] overflow-hidden rounded-sm bg-panel">
-            <span className="bracket-br" />
-            <Image
-              src="/mentor-portrait-monochrome-2.0.jpeg"
-              alt={profile.name}
-              fill
-              sizes="200px"
-              className="origin-[62%_0%] scale-[1.4] object-cover object-top"
-            />
-          </div>
           <h2 className="sr-only">About</h2>
           <p className="font-mono text-xs uppercase tracking-[0.2em] text-detect">[ 00 &mdash; About ]</p>
         </div>
